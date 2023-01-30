@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/website/about.css')}}">
+    <div class="head">
+        <div class="way">
+            <h1>About Us Page</h1>
+        </div>
+        <div class="way way2">
+            <i><a href="/">Home  </a>/<a>  Website Data  </a>/<a href="/us-tuoba" class="here">  About Us Page</a></i>
+        </div> 
+    </div> 
+    <div class="section">
+        {% include '_messages.html' %}
+            <table>
+                <tr>
+                    <th style="
+                        border-right: 1px solid #ddd;
+                        border-left: 1px solid #00692D;
+                    ">#</th>
+                    <th style="
+                        border-right: 1px solid #ddd;
+                    ">Image</th>
+                    <th style="
+                        border-right: 1px solid #00692D;
+                        border-bottom: 1px solid #ddd;
+                    ">Description</th>
+                </tr>
+                {% for rs in datas %}
+                <tr>
+                    <td name="name" style="text-align: center;">
+                        <div class="id">
+                            {{ rs.1  }}
+                        </div>
+                        <a href="{{url_for('aboutUpdates',name=rs.1)}}" class="icon" style="height: 0px; ">
+                            <img class="logo" src="https://api.iconify.design/material-symbols/edit.svg">
+                        </a>
+                    </td>
+                    <td name="picture" style="text-align: center;">
+                        <img style="height: 190px;" src="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=rs[4], b=rs[2])}}">
+                    </td>
+                    <td name="description">
+                        {{ rs[3] | safe }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+    </div>
+{% endblock content %}

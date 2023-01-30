@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ERROR</title>
+        <link rel="icon" href="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=path, b=icon)}}">
+        <link rel="stylesheet" href="{{url_for('static', filename = 'css/log/log.css')}}">
+    </head>
+    <body>
+        <body>
+            <div class="left">
+                <img src="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=path, b=brand)}}">
+            </div>
+            {% if id == "404" %}
+                <div class="right">
+                    <div class="big-404">
+                        404
+                    </div>
+                    <div class="text-404">
+                        That's an error.<br>
+                        The requester URL/badpage was not found on this server.<br>
+                        That's all we know.
+                        <br><br>
+                        <a href="/">Back To Home Page</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="right">
+                    <div class="big-404">
+                        419
+                    </div>
+                    <div class="text-404">
+                        That's an error.<br>
+                        Sorry, your session has expired.<br>
+                        Please refresh and try again.
+                        <br><br>
+                        <a href="/">Back To Home Page</a>
+                    </div>
+                </div>
+            {% endif %}
+        </body>
+    </body>
+</html>

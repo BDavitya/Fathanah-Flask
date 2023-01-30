@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/website/surah.css')}}">
+    <div class="head">
+        <div class="way">
+            <a class="arrow" href="/harus-alquran">&#x2B05;<br></a>
+            <h1 style="float: left;">Surah {{ datas[0][1] }}</h1>
+        </div>
+        <div class="way way2">
+            <i><a href="/">Home  </a>/<a>  Website Data  </a>/<a href="{{url_for('surahDisplay',name=datas[0][1])}}" class="here">  Al Quran Surah {{ datas[0][1] }}</a></i>
+        </div> 
+    </div> 
+    <div class="section">
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search..." title="Type in number">
+        <table id="myTable">
+            <tr>
+                <th style="
+                    width: 40px;
+                    border-right: 1px solid #ddd;
+                    border-left: 1px solid #00692D;
+                ">Verse</th>
+                <th style="
+                    border-right: 1px solid #ddd;
+                ">Arab</th>
+                <th style="
+                    border-right: 1px solid #ddd;
+                ">Name</th>
+                <th style="
+                    border-right: 1px solid #00692D;
+                ">Meaning</th>
+            </tr>
+            {% for rs in datas %}
+            <tr>
+                <td style="text-align: center;">
+                    <div class="id">
+                        {{ loop.index }}
+                    </div>
+                    <a onclick="document.getElementById('{{ rs.1 }}').style.display='block'" class="icon">
+                        <img class="logo" src="https://api.iconify.design/material-symbols/edit.svg">
+                    </a>
+                </td>
+                <td name="arab" style="text-align: right;">
+                    {{ rs.2 }}
+                </td>
+                <td name="latin">
+                    {{ rs.3 }}
+                </td>
+                <td name="meaning">
+                    {{ rs.4 }}
+                </td> 
+            </tr>
+            <div id="{{ rs.1 }}" class="modal">
+                <div class="modal-content animate" style="margin: 130px auto;inline-size: max-content;padding: 20px;height: 410px;width: 500px;">
+                    <h2 class="title">UPDATE VERSE {{ loop.index }}</h2>
+                    <span onclick="document.getElementById('{{ rs.1 }}').style.display='none'" class="close">&times;</span>
+                    <div class="middle">
+                        <form action=" " method="POST" enctype="multipart/form-data" role="form">
+                            {% from "_formhelpers.html" import render_field %}
+                            <div class="section sect2"> 
+                                {{ render_field(form.id, value = rs.0) }}
+                                {{ render_field(form.arab, value = rs.2) }}
+                                {{ render_field(form.latin, value = rs.3) }}
+                                {{ render_field(form.meaning, value = rs.4) }}
+                                <button type="submit" class="button" style="padding-top: 6px; padding-bottom: 6px;">Update Data</a>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </table>        
+    </div>
+    <script src="{{url_for('static', filename = 'js/website/surah.js')}}"></script>
+{% endblock content %}

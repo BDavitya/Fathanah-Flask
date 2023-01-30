@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathanah : Dashboard Website</title>
+    <link rel="icon" href="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=path, b=icon)}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/log/log.css')}}">
+</head>
+<body>
+    <section> 
+        <div class="dashboard-logo">
+            <a href="/">
+                <img src="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=path, b=brand)}}"><br>
+            </a>
+            <p style="margin-top: 5px;">Login to start your session</p>
+        </div>
+        {% include '_messages.html' %}
+        <form class="form" method="POST">
+            <input class="input-email" type="email" name="email" placeholder="Insert your email" required><br><br>
+            <input class="input-pwd" id="input-pw" type="password" name="password" placeholder="Insert your password" required>
+            <label class="checkbox-container"><p style="font-size: 12px;">Show Password</p>
+                <input type="checkbox" name="check" onclick="showPassword()">
+                <span class="checkmark"></span>
+            </label> 
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+        <script src="{{url_for('static', filename = 'js/log/log.js')}}"></script>
+    </section>
+</body>
+</html>

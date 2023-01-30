@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% block content %}
+  {% include '_messages.html' %}
+  <div style="margin: 18px 0px;">
+    <div class="clearfix">
+      <div class="left-right" style="padding: 30px 7px 36px 35px;">
+        <input id="usingMyDiary" value="{{ diary }}" hidden>
+        <input id="manyUser" value="{{ user }}" hidden>
+        <canvas id="myChart" style="width:100%;"></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+      </div>
+      <div class="left-right">
+        <link rel="stylesheet" href="{{url_for('static', filename = 'css/home/index.css')}}">
+        <div id = "clock"></div>
+        <div id = "date"></div>
+        <div class="secret">
+          keep everything<br>inside secret
+        </div>
+        <script src="{{url_for('static', filename = 'js/home/index.js')}}"></script>
+      </div>
+    </div>
+    <div class="box">
+      <div class="in-box">
+        <div class="num">
+          {{ article }}        
+        </div>
+        <div class="detail">
+          articles
+        </div>
+      </div>
+      <div class="in-box">
+        <div class="num">
+          {{ pray }}          
+        </div>
+        <div class="detail">
+          prayers
+        </div>
+      </div>
+      <div class="in-box">
+        <div class="num">
+          {{ user }}         
+        </div>
+        <div class="detail" style="margin-top:4px;">
+          website<br>users
+        </div>
+      </div>
+      <div class="in-box">
+        <div class="num">
+          {{ story }}         
+        </div>
+        <div class="detail" style="margin-top:4px;">
+          user<br>stories
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

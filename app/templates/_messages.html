@@ -1,0 +1,65 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    <style>
+        .alert{
+            padding: 15px 50px;
+            margin: 0px 12px 8px;
+            background-color: #F7BA00;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -162px;
+        text-align: center;
+        border-radius: 2px;
+        padding: 20px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        top: 30px;
+        font-size: 17px;
+        list-style: none;
+        }
+
+        #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;}
+        }
+
+        @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+        }
+    </style>
+    <ul class="show" id="snackbar">
+        {% for category, message in messages %}
+            <div class="alert">
+                <li>{{ message }}</li>
+            </div>
+        {% endfor %}
+    </ul>
+    <script>
+        var x = document.getElementById("snackbar");
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    </script>
+{% endif %}
+{% endwith %}

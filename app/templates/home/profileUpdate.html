@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/home/profile.css')}}">
+    <div class="top clearfix">
+        <div class="way">
+            <h2>PROFILE</h2>  
+        </div>
+        <div class="way2">
+            <i><a href="/">Home  </a>/<a href="#" class="here">  Profile</a></i>
+        </div>
+    </div>
+    {% include '_messages.html' %}
+    <div class="middle clearfix">
+        {% from "_formhelpers.html" import render_field %}
+        <form action=" " method="POST" enctype="multipart/form-data" role="form">
+            <div class="left">
+                <div class="profpict">
+                    <img src="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=data[7], b=data[6])}}"><br>
+                    <input type="file" name="pic">
+                </div>
+            </div>
+            <div class="right">
+                {{ render_field(form.name, value=data[1]) }}
+                {{ render_field(form.email, value=data[2]) }}
+                {{ render_field(form.role, value=data[4], disabled=true) }}
+                {{ render_field(form.instagram, value=data[5]) }}
+                <button type="submit" class="button" style="padding-top: 6px; padding-bottom: 6px;">Update Your Data</button>
+                </form>
+                <button class="button" style="padding-top: 6px; padding-bottom: 6px; margin-right: 10px;"><a href="/nafsi-ana-pwd">Change Password Account</button></a>
+            </div>
+    </div>
+{% endblock content %}

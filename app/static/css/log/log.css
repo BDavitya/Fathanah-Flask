@@ -1,0 +1,217 @@
+body{
+    font-family: Roboto, sans-serif;
+    background-color: #37A372;
+}
+
+section{
+    background-color: #EBEBEB;
+    padding: 20px;
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 13%;
+    box-shadow: 10px 10px #008850;
+}
+
+.dashboard-logo{
+    text-align: center;
+    font-size: 12px;
+}
+
+.dashboard-logo img{
+    height:70px;
+    padding-right: 2px;
+}
+
+.form{
+    text-align: center;
+    height: 150px;
+}
+
+input{
+    background-color: transparent;
+    background-size: 20px;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 10px;
+    border: none;
+    outline: #35913E solid;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 10px;
+}
+
+input:focus{
+    border: none;
+    outline: #35913E solid;
+    background-color: transparent;
+}
+
+input[type="email" i]{
+    background-image: url('https://api.iconify.design/material-symbols/mail-rounded.svg?color=%2335913e');
+}
+
+input[type="password" i]{
+    background-image: url('https://api.iconify.design/mdi/password.svg?color=%2335913e');
+}
+
+input[type="text" i]{
+    background-image: url('https://api.iconify.design/mdi/password.svg?color=%2335913e');
+}
+
+.btn-login{
+    background-color: #35913E;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    float: right;
+    margin-right: 12px;
+}
+
+.btn-login:hover{
+    color: #35913E;
+    background-color: white;
+}
+
+.btn-yes{
+    background-color: #35913E;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    float: left;
+    margin-top: 15px;
+    margin-left: 45px;
+}
+
+.btn-yes:hover{
+    color: #35913E;
+    background-color: white;
+}
+
+.btn-no{
+    background-color: #35913E;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    float: right;
+    margin-top: 15px;
+    margin-right: 45px;
+}
+
+.btn-no:hover{
+    color: #35913E;
+    background-color: white;
+}
+
+.left{
+    margin-top: 210px;
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+
+.left img{
+    width: 654px;
+    left: 111px;
+    position: fixed;
+}
+
+.right{
+    width: 50%;
+    float: right;
+    margin-top: 70px;
+}
+
+.big-404{
+    font-size: 300px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.text-404{
+    text-align: center;
+    font-size: 20px;
+}
+
+.text-404 a{
+    transition: 1s;
+}
+
+.text-404 a:hover{
+    text-shadow: 0 0 10px #fff, 0 0 20px green, 0 0 24px #fff, 0 0 40px green, 0 0 50px white, 0 0 60px white, 0 0 70px white
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 30px;
+    margin-left: 3px;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #198246;
+    margin-left: 11px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ACE1C3;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #00692D;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 4.5px;
+    top: 1px;
+    width: 3px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

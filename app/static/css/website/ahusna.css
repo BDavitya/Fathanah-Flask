@@ -1,0 +1,153 @@
+.sect2{
+    height: 287px;
+}
+
+.head::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.way{
+    float: left;
+    width: 50%;
+}
+
+.way2{
+    text-align: right;
+    margin-top: 26px;
+    color: gray;
+    font-size: 13px;
+}
+
+.way2 a{
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.way2 a:hover{
+    color: rgb(74, 73, 73);
+}
+
+h1{
+    font-size: 42px;
+    font-weight: 900;
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
+
+.section{
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.115);
+    margin-top:20px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td{
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 15px;
+    height: 24px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+    padding: 12px;
+    text-align: center;
+    background-color: #00692D;
+    color: white;
+    font-size: 20px;
+}
+
+.icon{
+    display: none;
+}
+
+tr:hover .icon{
+    display: block;
+}
+
+tr:hover .id{
+    display: none;
+}
+
+.logo{
+    height: 20px;
+}
+
+.here{
+    color: black;
+    font-weight: 900;
+}
+
+.button{
+    float: right;
+    text-decoration: none;
+    border-radius: 17px;
+    background-color: #00692D;
+    border: 3px solid #00692D;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+}
+
+.button:hover{
+    background-color: white;
+    color: #00692D;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+label{
+    font-weight: 900;
+}
+
+dd input{
+    background: none;
+    border: 1px solid #00692D;
+    border-radius: 50px;
+    outline: none;
+    color: black;
+    padding: 2px;
+    width: 98%;
+    margin-top: 7px;
+    height: 40px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+dd{
+    margin: 0px;
+}
+
+
+#myInput {
+    font-size: 16px;
+    padding: 12px 26px 12px 43px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    float: right;
+    background-image: url('https://api.iconify.design/material-symbols/search.svg?color=%23ddd');
+    background-position: 6px 5px;
+    background-repeat: no-repeat;
+    background-size: 32px;
+}
+
+#myInput:focus {
+    background-image: url('https://api.iconify.design/material-symbols/search.svg');
+}

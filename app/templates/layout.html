@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatanah : Dashboard Website</title>
+    <link rel="icon" href="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=path, b=icon)}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/layout.css')}}">
+</head>
+<body>
+    <div class="preloader">
+        <div class="loading">
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--text'></div>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <div class="top-sidenav">
+            <img src="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=path, b=brand)}}">
+            <hr style="width:200px;">
+        </div>
+        <div class="dpbtn">
+            <div class="dropdown-button" >
+                <button class="dropdown-btn {% if menu=='website' %} actived {% endif %}" style="padding:15px ;">
+                    <img class='side-icon' src="https://api.iconify.design/pepicons-pop/internet.svg?color=white"><b> WEBSITE DATA</b>
+                </button>
+                <div class="dropdown-container {% if menu=='website' %} opened {% endif %}">
+                    <a href="/us-tuoba" style="padding:10px 5px;" class="{% if submenu=='about' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About Us Page</a>
+                    <a href="/ansuh-luamsa" style="padding:10px 5px;" class="{% if submenu=='asmaul-husna' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asmaul Husna Data</a>
+                    <a href="/harus-alquran" style="padding:10px 5px;" class="{% if submenu=='quran-surah' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Al Quran Data</a>
+                </div>
+            </div>
+            <div class="dropdown-button" >
+                <button class="dropdown-btn {% if menu=='picture' %} actived {% endif %}" style="padding:15px ;">
+                    <img class='side-icon' src="https://api.iconify.design/clarity/picture-solid.svg?color=white"><b> PICTURE</b>
+                </button>
+                <div class="dropdown-container {% if menu=='picture' %} opened {% endif %}">
+                    <a href="/pict-hatp" style="padding:10px 5px;" class="{% if submenu=='path' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Picture Save Path</a>
+                    <a href="/noci-menu" style="padding:10px 5px;" class="{% if submenu=='menu-icon' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu Icon</a>
+                    <a href="/feat-redils" style="padding:10px 5px;" class="{% if submenu=='slider' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slider Feature</a>
+                </div>
+            </div>
+            <div class="dropdown-button" >
+                <button class="dropdown-btn {% if menu=='article' %} actived {% endif %}" style="padding:15px ;">
+                    <img class='side-icon' src="https://api.iconify.design/fluent/news-24-filled.svg?color=white"><b> ARTICLE</b>
+                </button>
+                <div class="dropdown-container {% if menu=='article' %} opened {% endif %}">
+                    <a href="/cletiar-etac" style="padding:10px 5px;" class="{% if submenu=='article-category' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category</a>
+                    <a href="/cletiar-atad" style="padding:10px 5px;" class="{% if submenu=='article-data' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data</a>
+                </div>
+            </div>
+            <div class="dropdown-button" >
+                <button class="dropdown-btn {% if menu=='prayer' %} actived {% endif %}" style="padding:15px ;">
+                    <img class='side-icon' src="https://api.iconify.design/mdi/hands-pray.svg?color=white"><b> PRAYER</b>
+                </button>
+                <div class="dropdown-container {% if menu=='prayer' %} opened {% endif %}">
+                    <a href="/etac-yerpra" style="padding:10px 5px;" class="{% if submenu=='prayer-category' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category</a>
+                    <a href="/atad-yerpra" style="padding:10px 5px;" class="{% if submenu=='prayer-data' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data</a>
+                </div>
+            </div>
+            <div class="dropdown-button" >
+                <button class="dropdown-btn {% if menu=='user' %} actived {% endif %}" style="padding:15px ;">
+                    <img class='side-icon' src="https://api.iconify.design/mdi/user.svg?color=white"><b> USER</b>
+                </button>
+                <div class="dropdown-container {% if menu=='user' %} opened {% endif %}">
+                    <a href="/atad-seru" style="padding:10px 5px;" class="{% if submenu=='user-data' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data</a>
+                    <a href="/seru-elor" style="padding:10px 5px;" class="{% if submenu=='role' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Role</a>
+                    <a href="/resu-pp" style="padding:10px 5px;" class="{% if submenu=='pp' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profile Picture</a>
+                    <a href="/yraid-resu" style="padding:10px 5px;" class="{% if submenu=='mydiary' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyDiary</a>
+                    <a href="/ures-meseji" style="padding:10px 5px;" class="{% if submenu=='message' %} opened-page {% endif %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="header">
+            <a class="dashhome" href="/">DASHBOARD</a>
+            <div class="dropdown">
+                <button class="dropbtn">{{ data[1] }}</button>
+                <div class="dropdown-content">
+                    <a onclick="document.getElementById('profile').style.display='block'">PROFILE</a>
+                    <hr>
+                    <a onclick="document.getElementById('about').style.display='block'">ABOUT US</a>
+                    <hr>
+                    <a onclick="document.getElementById('logout').style.display='block'">LOGOUT</a>
+                </div>
+            </div>
+            <img class="profile-pict" src="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=data[7], b=data[6])}}">
+        </div>
+        <section>
+            <div id="logout" class="modal">
+                <div class="modal-content animate" style="margin-top: 260px;">
+                    <div class="dashboard-logo">
+                        <img src="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=path, b=brand)}}"><br>
+                        <p>Are you sure want to end your session?</p>
+                    </div>
+                    <div style="height: 50px;">
+                        <a href="/waalaikumsalam">
+                            <button class="btn-yes">YES</button>
+                        </a>
+                        <a onclick="document.getElementById('logout').style.display='none'">
+                            <button class="btn-no">NO</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="profile" class="modal">
+                <div class="modal-content animate" style="margin: 139px auto; inline-size: max-content;padding: 20px;height: 392px;">
+                    <h2 class="title">PROFILE</h2>  
+                    <span onclick="document.getElementById('profile').style.display='none'" class="close">&times;</span>
+                    <div class="middle">
+                        <div class="leftin clearfix">
+                            <img src="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=data[7], b=data[6])}}">
+                        </div>
+                        <div class="rightin">
+                            <div class="name">{{ data[1] }}</div>
+                            <div class="role">{{ data[4] }}</div>
+                            <div class="email">&#x1F4E7; {{ data[2] }}</div>
+                            <div class="instagram">&#x1F4F7; <a href="{{ 'https://www.instagram.com/{a}/'.format(a=data[2])}}" target='_blank'>@{{ data[5] }}</a></div>
+                            <button type="submit" class="button"><a href="/nafsi-ana" >Update Your Profile</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="about" class="modal">
+                <div class="modal-content animate" style="margin: 109px auto; inline-size: max-content;padding: 50px 40px;height: 392px;">
+                    <span onclick="document.getElementById('about').style.display='none'" class="close" style="margin-right: -22px;">&times;</span>
+                    <div class="middle" style="margin-top: 20px;">
+                        <div class="leftin clearfix">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=about[0][4], b=about[0][2])}}" style="margin-top: 112px;">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="isi">
+                                            {{ about[0][3] | safe }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rightin clearfix" style="margin-left: 530px;margin-top: -90px;">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ 'http://172.20.4.31:5000/{a}{b}'.format(a=about[1][4], b=about[1][2])}}" style="margin-top: 61px;">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="isi">
+                                            {{ about[1][3] | safe }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% block content %}
+        
+            {% endblock content%}
+        </section>
+        <div class="footer">
+            <p><b>Copyright &copy; 2022. All Rights Reserved.</b></p>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="{{url_for('static', filename = 'js/layout.js')}}"></script>
+</body>
+</html>

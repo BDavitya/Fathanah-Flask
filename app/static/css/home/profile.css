@@ -1,0 +1,224 @@
+.top{
+    margin-bottom: 10px;
+}
+
+h2{
+    font-weight: 900;
+    font-size: 35px;
+    margin: 5px 0px 20px;
+}
+
+.way{
+    float: left;
+}
+
+.way a{
+    color: black;
+    font-weight: 900;
+    font-size: 38px;
+    text-decoration: none;
+    float: left;
+    margin-right: 12px;
+}
+
+.way2{
+    float: right;
+    margin-top: 20px;
+}
+
+.here{
+    color: black;
+    font-weight: 900;
+}
+
+.way2 i{
+    color: gray;
+}
+
+.way2 a{
+    color: gray;
+    text-decoration: none;
+    font-size: smaller;
+}
+
+.left{
+    float: left;
+    border-radius: 21px;
+    background-color: #EBEBEB;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.left img{
+    height: 334px;
+    width: 200px;
+    object-fit: contain;
+}
+
+.right{
+    float: right;
+    border-radius: 21px;
+    background-color: #EBEBEB;
+    padding: 22px;
+    width: 850px;
+    height: 375px;
+}
+
+.right input{
+    margin-bottom: 12px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.profpict input{
+    background: none;
+    border: 1px solid #00692D;
+    border-radius: 50px;
+    outline: none;
+    color: black;
+    padding: 2px;
+}
+
+::-webkit-file-upload-button{
+    color: white;
+    background-color: #00692D;
+    padding: 10px;
+    border:none;
+    border-radius: 50px;
+    box-shadow:1px 0 0px #00692D;
+    outline: none;
+}
+
+label{
+    font-weight: 900;
+}
+
+dd input[type=file]{
+    background: none;
+    border: 1px solid #00692D;
+    border-radius: 50px;
+    outline: none;
+    color: black;
+    padding: 2px;
+    width: 96%;
+    height: 36px;
+    margin-top: 0px;
+}
+
+dd input{
+    background: none;
+    border: 1px solid #00692D;
+    border-radius: 50px;
+    outline: none;
+    color: black;
+    padding: 2px;
+    width: 98%;
+    margin-top: 7px;
+    height: 40px;
+    padding-left: 20px;
+}
+
+dd{
+    margin: 0px;
+}
+
+.button{
+    float: right;
+    text-decoration: none;
+    border-radius: 17px;
+    background-color: #00692D;
+    border: 3px solid #00692D;
+    padding: 10px;
+    color: white;
+    margin: 0px;
+}
+
+.button:hover{
+    background-color: white;
+    color: #00692D;
+}
+
+.footer{
+    margin-top: 20px;
+}
+
+input[type=text]:disabled {
+    background: #dedede;
+    border: 1px solid #000000;
+    user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+}
+
+.midx{
+    border-radius: 21px;
+    background-color: #EBEBEB;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    height: 380px;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 30px;
+    margin-left: 3px;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #198246;
+    margin-left: 11px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ACE1C3;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #00692D;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 4.5px;
+    top: 0px;
+    width: 3px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

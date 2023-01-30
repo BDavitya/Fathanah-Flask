@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/website/quran.css')}}">
+    <div class="head">
+        <div class="way">
+            <h1>Al Quran Surah</h1>
+        </div>
+        <div class="way way2">
+            <i><a href="/">Home  </a>/<a>  Website Data  </a>/<a href="/harus-alquran" class="here">  Al Quran Surah</a></i>
+        </div> 
+    </div> 
+    <div class="section">
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search..." title="Type in a name">
+        <table id="myTable">
+            <tr>
+                <th style="
+                    width: 40px;
+                    border-right: 1px solid #ddd;
+                    border-left: 1px solid #00692D;
+                ">#</th>
+                <th style="
+                    border-right: 1px solid #ddd;
+                ">Name</th>
+                <th style="
+                    border-right: 1px solid #ddd;
+                ">Meaning</th>
+                <th style="
+                    border-right: 1px solid #00692D;
+                ">Verses</th>
+            </tr>
+            {% for rs in datas %}
+            <tr>
+                <td style="text-align: center;">
+                    <div class="id">
+                        {{ rs.0 }}
+                    </div>
+                    <a onclick="document.getElementById('{{ rs.1 }}').style.display='block'" class="icon">
+                        <img class="logo" src="https://api.iconify.design/material-symbols/edit.svg">
+                    </a>
+                </td>
+                <td name="name">
+                    {{ rs.1 }}
+                </td>
+                <td name="meaning">
+                    {{ rs.2 }}
+                </td>
+                <td name="many" style="text-align: center;">
+                    <a href="{{url_for('surahDisplay',name=rs.1)}}" class="view" >View All {{ rs.3 }} Verses &#x27A1;</a>
+                </td> 
+            </tr>
+            <div id="{{ rs.1 }}" class="modal">
+                <div class="modal-content animate" style="margin: 130px auto;inline-size: max-content;padding: 20px;height: 410px;width: 500px;">
+                    <h2 class="title">UPDATE NUMBER {{ rs.0 }}</h2>
+                    <span onclick="document.getElementById('{{ rs.1 }}').style.display='none'" class="close">&times;</span>
+                    <div class="middle">
+                        <form action=" " method="POST" enctype="multipart/form-data" role="form">
+                            {% from "_formhelpers.html" import render_field %}
+                            <div class="section sect2"> 
+                                {{ render_field(form.id, value = rs.0) }}
+                                {{ render_field(form.name, value = rs.1) }}
+                                {{ render_field(form.meaning, value = rs.2) }}
+                                <button type="submit" class="button" style="padding-top: 6px; padding-bottom: 6px;">Update Data</a>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </table>        
+    </div>
+    <script src="{{url_for('static', filename = 'js/website/quran.js')}}"></script>
+{% endblock content %}
