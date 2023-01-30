@@ -1,13 +1,13 @@
 from flask import Flask, session
 from flask_ckeditor import CKEditor
 from flask_mysqldb import MySQL
-from flask_sqlalchemy import SQLAlchemy
-import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] ='mysql://fathanah:FathanahS3cr3t@157.245.207.179:5432/fathanah'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'fathanah'
+db = MySQL(app)
 app.secret_key = "012#!ApAAjaBoleh)(*^%"
 
 app.config['CKEDITOR_HEIGHT'] = '500'
